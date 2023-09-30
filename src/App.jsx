@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import Home from "./components/Home"
 
 import "./App.css"
+import About from "./components/About"
 
 export default class App extends Component {
   constructor() {
@@ -35,6 +36,7 @@ export default class App extends Component {
         >
           <Header mode={this.state.mode} toggelMode={toggelMode} />
           <Home mode={this.state.mode} />
+          <About mode={this.state.mode} />
         </div>
       </>
     )

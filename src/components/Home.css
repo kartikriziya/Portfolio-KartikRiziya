@@ -1,23 +1,19 @@
 #home {
-  /* background-color: red; */
   min-height: 80vh;
   max-width: 100%;
 }
 #homeIntro {
-  /* background-color: green; */
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 #homeProfile {
-  /* background-color: aqua; */
   min-height: 80vh;
   display: flex;
   justify-content: center;
 }
 #profileIMG {
-  /* background-color: black; */
   margin-top: -15% !important;
   height: auto;
   width: 100%;

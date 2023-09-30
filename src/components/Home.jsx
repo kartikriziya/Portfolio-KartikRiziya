@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import Kartik_ProfileIMG from "../assets/Kartik_ProfileIMG.png"
 
+import Kartik_ProfileIMG from "../assets/Kartik_ProfileIMG.png"
 import "./Home.css"
 
 export class Home extends Component {
@@ -9,7 +9,7 @@ export class Home extends Component {
       <div className="container-fluid" id="home">
         <div className="row">
           <div className="col-md-6 ps-5" id="homeIntro">
-            <div className="ms-5 ps-5" id="introText">
+            <div className="ms-5 ps-5" id="homeIntroText">
               <h4>Hello, my name is </h4>
               <h1>Kartik Riziya</h1>
               <h2>
