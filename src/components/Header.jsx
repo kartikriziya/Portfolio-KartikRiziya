@@ -1,33 +1,27 @@
 import React, { Component } from "react"
 import companyLogo from "../assets/bootstrap-logo.svg"
-import PropTypes from "prop-types"
+
+import "./Header.css"
 
 export class Header extends Component {
-  // static defaultProps = {
-  //   mode: "light",
-  // }
-  // static propTypes = {
-  //   mode: PropTypes.string,
-  // }
-
-  // constructor() {
-  //   super()
-  // }
   render() {
     return (
       <div>
         <nav
-          className={`navbar sticky-top navbar-expand-md navbar-dark bg-${this.props.mode}`}
+          className={`navbar sticky-top navbar-expand-md navbar-${this.props.mode} bg-${this.props.mode}`}
         >
           <div className="container">
             <a className="navbar-brand" href="#">
-              <img
+              {/* <img
                 src={companyLogo}
                 alt="Logo"
                 width="30"
                 height="24"
                 className="d-inline-block align-text-top"
-              />
+              /> */}
+              <b>
+                Portfo<span style={{ color: "#ff7b00" }}>lio</span>
+              </b>
             </a>
             <button
               className="navbar-toggler"
@@ -42,15 +36,39 @@ export class Header extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                <li className="nav-item ">
+                  <a className="nav-link active " aria-current="page" href="#">
                     Home
+                  </a>
+                </li>
+                <li className="nav-item ">
+                  <a className="nav-link  " aria-current="page" href="#">
+                    About
+                  </a>
+                </li>
+                <li className="nav-item ">
+                  <a className="nav-link  " aria-current="page" href="#">
+                    Services
+                  </a>
+                </li>
+                <li className="nav-item ">
+                  <a className="nav-link  " aria-current="page" href="#">
+                    Skills
+                  </a>
+                </li>
+                <li className="nav-item ">
+                  <a className="nav-link  " aria-current="page" href="#">
+                    Contact
                   </a>
                 </li>
               </ul>
 
               {/* toggleMode Switch */}
-              <div className="form-check form-switch text-light">
+              <div
+                className={`form-check form-switch text-mode-${
+                  this.props.mode === "light" ? "dark" : "light"
+                }`}
+              >
                 <input
                   className="form-check-input"
                   onClick={this.props.toggelMode}
@@ -61,7 +79,7 @@ export class Header extends Component {
                   className="form-check-label"
                   htmlFor="flexSwitchCheckDefault"
                 >
-                  Enable DarkMode
+                  Enable LightMode
                 </label>
               </div>
             </div>

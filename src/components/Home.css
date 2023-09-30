@@ -1,0 +1,40 @@
+#home {
+  /* background-color: red; */
+  min-height: 80vh;
+  max-width: 100%;
+}
+#homeIntro {
+  /* background-color: green; */
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#homeProfile {
+  /* background-color: aqua; */
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+#profileIMG {
+  /* background-color: black; */
+  margin-top: -15% !important;
+  height: auto;
+  width: 100%;
+}
+#hireMeBTN {
+  --bs-btn-color: #ff7b00;
+  --bs-btn-border-color: #ff7b00;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #ff7b00;
+  --bs-btn-hover-border-color: #ff7b00;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #ff7b00;
+  --bs-btn-active-border-color: #ff7b00;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #ff7b00;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #ff7b00;
+  --bs-gradient: none;
+}
