@@ -17,20 +17,15 @@
   margin-top: -15% !important;
   height: auto;
   width: 100%;
+  animation: 1s ease-out 0s 1 homeProfileIMG;
 }
-#hireMeBTN {
-  --bs-btn-color: #ff7b00;
-  --bs-btn-border-color: #ff7b00;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #ff7b00;
-  --bs-btn-hover-border-color: #ff7b00;
-  --bs-btn-focus-shadow-rgb: 25, 135, 84;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #ff7b00;
-  --bs-btn-active-border-color: #ff7b00;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #ff7b00;
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #ff7b00;
-  --bs-gradient: none;
+
+/* Animation */
+@keyframes homeProfileIMG {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

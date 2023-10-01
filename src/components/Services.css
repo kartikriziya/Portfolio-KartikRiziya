@@ -1,0 +1,16 @@
+#services {
+  min-height: 80vh;
+  max-width: 100%;
+}
+
+#serviceIMG_Head,
+#serviceIntro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+#serviceIMG {
+  height: 100px;
+  width: fit-content;
+}

@@ -42,22 +42,17 @@ export class Header extends Component {
                   </a>
                 </li>
                 <li className="nav-item ">
-                  <a className="nav-link  " aria-current="page" href="#">
+                  <a className="nav-link  " aria-current="page" href="#about">
                     About
                   </a>
                 </li>
                 <li className="nav-item ">
-                  <a className="nav-link  " aria-current="page" href="#">
+                  <a className="nav-link  " aria-current="page" href="#service">
                     Services
                   </a>
                 </li>
                 <li className="nav-item ">
-                  <a className="nav-link  " aria-current="page" href="#">
-                    Skills
-                  </a>
-                </li>
-                <li className="nav-item ">
-                  <a className="nav-link  " aria-current="page" href="#">
+                  <a className="nav-link  " aria-current="page" href="#contact">
                     Contact
                   </a>
                 </li>

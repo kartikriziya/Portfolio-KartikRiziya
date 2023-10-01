@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import Kartik_ProfileIMG from "../assets/Kartik_ProfileIMG.png"
+
 import "./Home.css"
 
 export class Home extends Component {
