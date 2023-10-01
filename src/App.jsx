@@ -13,6 +13,7 @@ export default class App extends Component {
     }
     document.body.style.backgroundColor = "#212529"
   }
+
   render() {
     const toggelMode = () => {
       if (this.state.mode === "light") {

@@ -29,10 +29,13 @@
   color: #212529 !important;
 }
 
-#skills {
+#skills,
+#experience,
+#education {
   /* background-color: aqua; */
   display: flex;
   flex-direction: column;
+  height: max-content;
 }
 #developmentContent {
   display: flex;
