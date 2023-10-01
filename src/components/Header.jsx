@@ -8,7 +8,7 @@ export class Header extends Component {
     return (
       <div>
         <nav
-          className={`navbar sticky-top navbar-expand-md navbar-${this.props.mode} bg-${this.props.mode}`}
+          className={`navbar fixed-top navbar-expand-md navbar-${this.props.mode} bg-${this.props.mode}`}
         >
           <div className="container">
             <a className="navbar-brand" href="#">
@@ -20,7 +20,7 @@ export class Header extends Component {
                 className="d-inline-block align-text-top"
               /> */}
               <b>
-                Portfo<span style={{ color: "#ff7b00" }}>lio</span>
+                Portfo<span style={{ color: "#ff7b00" }}>lio</span>.
               </b>
             </a>
             <button

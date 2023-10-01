@@ -28,3 +28,19 @@
 .nav-tabs .nav-link.active:hover {
   color: #212529 !important;
 }
+
+#skills {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+}
+#developmentContent {
+  display: flex;
+  flex-direction: row;
+}
+#frontendSkills,
+#backendSkills,
+#excelSkills {
+  height: 100px;
+  width: fit-content;
+}
