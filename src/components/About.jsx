@@ -5,7 +5,7 @@ import Experience from "./Experience"
 import Education from "./Education"
 
 import Kartik_ProfileIMG2 from "../assets/Kartik_ProfileIMG2.png"
-import CV from "../assets/Kartik_Lebenslauf.pdf"
+import CV from "../assets/Kartik_CV.pdf"
 
 import "./About.css"
 
@@ -25,11 +25,8 @@ export class About extends Component {
     }
     return (
       <div className="container-fluid" id="about">
-        <div className="row">
-          <div
-            className="col-md-6 col-lg-5 col-xl-4 mt-5 p-5"
-            id="aboutProfile"
-          >
+        <div className="row p-5">
+          <div className="col-md-6 col-lg-5 col-xl-4 mt-5" id="aboutProfile">
             <div id="aboutIMG_CV">
               <div
                 className={`profileCard-${this.props.mode} mt-5`}
@@ -43,15 +40,15 @@ export class About extends Component {
                 />
               </div>
               <div className="mt-5" id="cv">
-                <button className="btn" id="hireMeBTN">
-                  <a href={CV} id="downloadCV" download>
+                <button className="btn" id="BTN">
+                  <a href={CV} id="BTN_Link" download>
                     Download CV
                   </a>
                 </button>
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-lg-7 col-xl-8 mt-5 p-5" id="aboutIntro">
+          <div className="col-md-6 col-lg-7 col-xl-8 p-5" id="aboutIntro">
             <div className="mt-4" id="aboutHeading">
               <h1>About Me</h1>
             </div>

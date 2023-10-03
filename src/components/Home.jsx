@@ -19,8 +19,10 @@ export class Home extends Component {
                   Developer Freelancer Designer
                 </span>
               </h2>
-              <button className="btn" id="hireMeBTN">
-                Hire me
+              <button className="btn" id="BTN">
+                <a href="#contact" id="BTN_Link">
+                  Hire me
+                </a>
               </button>
             </div>
           </div>

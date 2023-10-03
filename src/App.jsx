@@ -6,6 +6,7 @@ import About from "./components/About"
 
 import "./App.css"
 import Services from "./components/Services"
+import Contact from "./components/Contact"
 
 export default class App extends Component {
   constructor() {
@@ -41,6 +42,7 @@ export default class App extends Component {
           <Home mode={this.state.mode} />
           <About mode={this.state.mode} />
           <Services mode={this.state.mode} />
+          <Contact mode={this.state.mode} />
         </div>
       </>
     )

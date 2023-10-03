@@ -47,7 +47,11 @@ export class Header extends Component {
                   </a>
                 </li>
                 <li className="nav-item ">
-                  <a className="nav-link  " aria-current="page" href="#service">
+                  <a
+                    className="nav-link  "
+                    aria-current="page"
+                    href="#services"
+                  >
                     Services
                   </a>
                 </li>

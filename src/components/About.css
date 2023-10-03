@@ -11,12 +11,9 @@
   display: flex;
   justify-content: center;
 }
-#downloadCV {
+#BTN_Link {
   text-decoration: none;
   color: #ff7b00;
-}
-#cv:hover #downloadCV {
-  color: #fff;
 }
 #aboutIntro {
   min-height: 80vh;
