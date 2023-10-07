@@ -1,15 +1,40 @@
-import React, { Component, createRef } from "react"
+import React, { Component, createRef, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 
 import companyLogo from "../assets/bootstrap-logo.svg"
-
 import "./Header.css"
+import gsap from "gsap"
 
 export default function Header(props) {
+  let tl = props.timeline
+  let headerNavbar = useRef(null)
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      tl.from(".navbar-brand", 0.7, { opacity: 0, x: "-100" }).from(
+        ".nav-item",
+        0.8,
+        {
+          opacity: 0,
+          y: "-100",
+          stagger: { amount: 0.7 },
+          ease: props.ease,
+        }
+      )
+      gsap.from("#toggleModeSwitch", 0.7, {
+        opacity: 0,
+        x: "100",
+      })
+    })
+    return () => ctx.revert()
+  }, [])
+
   return (
     <div>
       <nav
         className={`navbar fixed-top navbar-expand-md navbar-${props.mode} bg-${props.mode}`}
+        id="headerNavbar"
+        ref={(el) => (headerNavbar = el)}
       >
         <div className="container">
           <a className="navbar-brand" href="#">
@@ -64,6 +89,7 @@ export default function Header(props) {
               className={`form-check form-switch text-mode-${
                 props.mode === "light" ? "dark" : "light"
               }`}
+              id="toggleModeSwitch"
             >
               <input
                 className="form-check-input"

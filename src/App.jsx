@@ -11,10 +11,6 @@ import { gsap, Power3 } from "gsap"
 export default function App() {
   const [mode, setMode] = useState("dark")
 
-  // gsap
-  let tl = new gsap.timeline()
-  let ease = Power3.easeOut()
-
   useEffect(() => {
     if (mode === "light") {
       document.body.style.backgroundColor = "#f8f9fa"
@@ -22,6 +18,10 @@ export default function App() {
       document.body.style.backgroundColor = "#212529"
     }
   })
+
+  // gsap
+  let tl = new gsap.timeline()
+  let ease = Power3.easeOut()
 
   // toggelMode function
   const toggelMode = () => {
