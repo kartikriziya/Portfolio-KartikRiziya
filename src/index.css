@@ -21,6 +21,7 @@
   border-radius: 15px;
   padding-left: 3%;
   padding-right: 3%;
+  /* animation: 1s ease-out 0s 1 profileCard; */
 }
 .profileCard-dark {
   background-color: rgb(30, 33, 37);
@@ -29,7 +30,7 @@
   border-radius: 15px;
   padding-left: 3%;
   padding-right: 3%;
-  animation: 1s ease-out 0s 1 profileCard;
+  /* animation: 1s ease-out 0s 1 profileCard; */
 }
 .skillCard-light {
   background-color: rgb(223, 224, 225);
@@ -56,7 +57,7 @@
   min-height: 450px;
   width: 100%;
   border-radius: 15px;
-  animation: 1s ease-out 0s 1 profileCard;
+  /* animation: 1s ease-out 0s 1 profileCard; */
 }
 .serviceCard-dark {
   background-color: rgb(30, 33, 37);
@@ -64,7 +65,7 @@
   min-height: 450px;
   width: 100%;
   border-radius: 15px;
-  animation: 1s ease-out 0s 1 profileCard;
+  /* animation: 1s ease-out 0s 1 profileCard; */
 }
 
 #BTN {

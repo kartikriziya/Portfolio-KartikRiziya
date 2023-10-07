@@ -1,9 +1,22 @@
-import React, { Component } from "react"
+import React, { Component, createRef } from "react"
 import companyLogo from "../assets/bootstrap-logo.svg"
 
 import "./Header.css"
+import { gsap, Power3 } from "gsap"
 
 export class Header extends Component {
+  constructor() {
+    super()
+  }
+  componentDidMount() {
+    this.ctx = gsap.context(() => {
+      this.props.timeline.from(this.portfolioLogo, 1, {
+        opacity: 0,
+        y: "100",
+      })
+      console.log(this.portfolioLogo)
+    })
+  }
   render() {
     return (
       <div>
@@ -11,7 +24,11 @@ export class Header extends Component {
           className={`navbar fixed-top navbar-expand-md navbar-${this.props.mode} bg-${this.props.mode}`}
         >
           <div className="container">
-            <a className="navbar-brand" href="#">
+            <a
+              className="navbar-brand"
+              href="#"
+              ref={(el) => (this.portfolioLogo = el)}
+            >
               {/* <img
                 src={companyLogo}
                 alt="Logo"

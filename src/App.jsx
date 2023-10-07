@@ -1,12 +1,12 @@
 import React, { Component, useState } from "react"
 import Header from "./components/Header"
 import Home from "./components/Home"
-
 import About from "./components/About"
-
-import "./App.css"
 import Services from "./components/Services"
 import Contact from "./components/Contact"
+
+import "./App.css"
+import { gsap, Power3 } from "gsap"
 
 export default class App extends Component {
   constructor() {
@@ -18,6 +18,7 @@ export default class App extends Component {
   }
 
   render() {
+    // toggelMode function
     const toggelMode = () => {
       if (this.state.mode === "light") {
         this.setState({
@@ -31,6 +32,11 @@ export default class App extends Component {
         document.body.style.backgroundColor = "#f8f9fa"
       }
     }
+
+    // gsap
+    let tl = new gsap.timeline()
+    let ease = Power3.easeOut()
+
     return (
       <>
         <div
@@ -38,7 +44,12 @@ export default class App extends Component {
             this.state.mode === "light" ? "dark" : "light"
           }`}
         >
-          <Header mode={this.state.mode} toggelMode={toggelMode} />
+          <Header
+            mode={this.state.mode}
+            toggelMode={toggelMode}
+            timeline={tl}
+            ease={ease}
+          />
           <Home mode={this.state.mode} />
           <About mode={this.state.mode} />
           <Services mode={this.state.mode} />
