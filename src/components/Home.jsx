@@ -21,19 +21,17 @@ export default function Home(props) {
           end: "top center",
           onEnter() {
             document
-              .querySelector("#headerNavbarContainer")
-              .classList.remove("container")
-            document
-              .querySelector("#headerNavbarContainer")
-              .classList.add("container-fluid")
+              .querySelector("#headerNavbar")
+              .classList.remove("bg-" + props.mode)
+            document.querySelector("#headerNavbar").style.backgroundColor =
+              "#ff7b00"
+            document.querySelector("#logoEnd").style.color = "#212529"
           },
           onLeaveBack() {
             document
-              .querySelector("#headerNavbarContainer")
-              .classList.remove("container-fluid")
-            document
-              .querySelector("#headerNavbarContainer")
-              .classList.add("container")
+              .querySelector("#headerNavbar")
+              .classList.add("bg-" + props.mode)
+            document.querySelector("#logoEnd").style.color = "#ff7b00"
           },
           scrub: true,
         },
@@ -55,7 +53,7 @@ export default function Home(props) {
         })
     })
     return () => ctx.revert()
-  }, [])
+  }, [props.changeHeaderBG])
 
   return (
     <div>

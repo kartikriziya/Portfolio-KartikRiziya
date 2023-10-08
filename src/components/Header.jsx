@@ -38,7 +38,7 @@ export default function Header(props) {
         id="headerNavbar"
         ref={(el) => (headerNavbar = el)}
       >
-        <div className="container" id="headerNavbarContainer">
+        <div className="container" id="headerNavbar">
           <a className="navbar-brand" href="#">
             {/* <img
                 src={companyLogo}
@@ -48,7 +48,11 @@ export default function Header(props) {
                 className="d-inline-block align-text-top"
               /> */}
             <b>
-              Portfo<span style={{ color: "#ff7b00" }}>lio</span>.
+              Portfo
+              <span id="logoEnd" style={{ color: "#ff7b00" }}>
+                lio
+              </span>
+              .
             </b>
           </a>
           <button
