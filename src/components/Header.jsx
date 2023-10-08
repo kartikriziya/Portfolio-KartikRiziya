@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import companyLogo from "../assets/bootstrap-logo.svg"
 import "./Header.css"
 import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Header(props) {
   let tl = props.timeline
@@ -32,11 +34,11 @@ export default function Header(props) {
   return (
     <div>
       <nav
-        className={`navbar fixed-top navbar-expand-md navbar-${props.mode} bg-${props.mode}`}
+        className={`navbar fixed-top navbar-expand-md navbar-${props.mode} bg-${props.mode} headerNavbar`}
         id="headerNavbar"
         ref={(el) => (headerNavbar = el)}
       >
-        <div className="container">
+        <div className="container" id="headerNavbarContainer">
           <a className="navbar-brand" href="#">
             {/* <img
                 src={companyLogo}
