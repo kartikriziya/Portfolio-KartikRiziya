@@ -16,9 +16,8 @@ export default function Home(props) {
       tl.from("#home", {
         scrollTrigger: {
           // markers: true,
-          trigger: "#BTN",
-          start: "top top",
-          end: "top center",
+          trigger: "#homeProfile",
+          start: "bottom top",
           onEnter() {
             document
               .querySelector("#headerNavbar")
@@ -36,10 +35,10 @@ export default function Home(props) {
           scrub: true,
         },
       })
-      tl.from("#homeIntroText1", { opacity: 0, x: "-100", duration: 0.5 })
+        .from("#homeIntroText1", { opacity: 0, x: "-100", duration: 0.5 })
         .from("#homeIntroText2", { opacity: 0, x: "-100", duration: 0.7 })
         .from("#homeIntroText3", { opacity: 0, x: "-100", duration: 0.6 })
-        .from("#BTN", {
+        .from(".specialBTN", {
           opacity: 0,
           y: "100",
           duration: 0.5,
@@ -69,8 +68,8 @@ export default function Home(props) {
                   Developer Freelancer Designer
                 </span>
               </h2>
-              <button className="btn" id="BTN">
-                <a href="#contact" id="BTN_Link">
+              <button className="btn specialBTN">
+                <a href="#contact" className="BTN_Link">
                   Hire me
                 </a>
               </button>

@@ -2,6 +2,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #212529;
 } */
+
 .bg-mode-light {
   background-color: #f8f9fa;
 }
@@ -21,7 +22,6 @@
   border-radius: 15px;
   padding-left: 3%;
   padding-right: 3%;
-  /* animation: 1s ease-out 0s 1 profileCard; */
 }
 .profileCard-dark {
   background-color: rgb(30, 33, 37);
@@ -30,7 +30,6 @@
   border-radius: 15px;
   padding-left: 3%;
   padding-right: 3%;
-  /* animation: 1s ease-out 0s 1 profileCard; */
 }
 .skillCard-light {
   background-color: rgb(223, 224, 225);
@@ -57,7 +56,6 @@
   min-height: 450px;
   width: 100%;
   border-radius: 15px;
-  /* animation: 1s ease-out 0s 1 profileCard; */
 }
 .serviceCard-dark {
   background-color: rgb(30, 33, 37);
@@ -65,10 +63,9 @@
   min-height: 450px;
   width: 100%;
   border-radius: 15px;
-  /* animation: 1s ease-out 0s 1 profileCard; */
 }
 
-#BTN {
+.specialBTN {
   --bs-btn-color: #ff7b00;
   --bs-btn-border-color: #ff7b00;
   --bs-btn-hover-color: #fff;
@@ -84,21 +81,6 @@
   --bs-btn-disabled-border-color: #ff7b00;
   --bs-gradient: none;
 }
-#BTN:hover #BTN_Link {
+.specialBTN:hover .BTN_Link {
   color: #fff;
-}
-
-/* Animation */
-
-@keyframes profileCard {
-  0% {
-    transform: translateY(100px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.test {
-  color: red;
 }

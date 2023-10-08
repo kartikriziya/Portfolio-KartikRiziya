@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
 }
-#BTN_Link {
+.BTN_Link {
   text-decoration: none;
   color: #ff7b00;
 }
@@ -25,7 +25,6 @@
   height: auto;
   width: 100%;
   border-radius: 15px;
-  animation: 1s ease-out 0s 1 aboutProfileIMG2;
 }
 
 .nav-tabs .nav-item.show .nav-link,
@@ -41,58 +40,36 @@
 #skills,
 #experience,
 #education {
-  /* background-color: aqua; */
   display: flex;
   flex-direction: column;
   height: max-content;
 }
 
-/* Skills */
+/* Development */
 #frontendDevelopment,
 #backendDevelopment,
 #excelSkills {
   cursor: default;
 }
-#developmentContent {
+.developmentContent {
   display: flex;
   flex-direction: row;
   cursor: default;
 }
-#frontendSkills,
-#backendSkills,
-#excelSkills {
+.skill {
   height: 50px;
   width: fit-content;
   cursor: pointer;
   transition: height 0.3s;
 }
-#frontendSkills:hover,
-#backendSkills:hover,
-#excelSkills:hover {
+.skill:hover {
   height: 100px;
 }
 
 /* Experience & Education */
-#individualExperience,
-#individualEducation {
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+.individual {
   cursor: default;
 }
-#individualExperience:hover,
-#individualEducation:hover {
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 10px -25px;
-}
-#experienceContent,
-#educationContent {
+.content {
   margin-top: -7px;
-}
-
-/* Animation */
-@keyframes aboutProfileIMG2 {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }

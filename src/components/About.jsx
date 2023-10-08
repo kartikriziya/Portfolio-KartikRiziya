@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Skills from "./Skills"
+import Development from "./Development"
 
 import Experience from "./Experience"
 import Education from "./Education"
@@ -35,8 +35,8 @@ export default function About(props) {
                 />
               </div>
               <div className="mt-5" id="cv">
-                <button className="btn" id="BTN">
-                  <a href={CV} id="BTN_Link" download>
+                <button className="btn specialBTN">
+                  <a href={CV} className="BTN_Link" download>
                     Download CV
                   </a>
                 </button>
@@ -116,7 +116,9 @@ export default function About(props) {
               </ul>
               <div className="tab-content" id="myTabContent">
                 {/* Skills */}
-                {aboutIntroLink === "skills" && <Skills mode={props.mode} />}
+                {aboutIntroLink === "skills" && (
+                  <Development mode={props.mode} />
+                )}
                 {/* Experience */}
                 {aboutIntroLink === "experience" && (
                   <Experience mode={props.mode} />
