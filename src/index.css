@@ -3,18 +3,23 @@
   background-color: #212529;
 } */
 
+/* Background */
 .bg-mode-light {
   background-color: #f8f9fa;
 }
 .bg-mode-dark {
   background-color: #212529;
 }
+
+/* Text */
 .text-mode-light {
   color: #f8f9fa;
 }
 .text-mode-dark {
   color: #212529;
 }
+
+/* Profile-Card */
 .profileCard-light {
   background-color: rgb(223, 224, 225);
   box-shadow: rgba(198, 199, 200, 0.25) 0px 25px 50px -12px;
@@ -31,6 +36,8 @@
   padding-left: 3%;
   padding-right: 3%;
 }
+
+/* Skill-Card */
 .skillCard-light {
   background-color: rgb(223, 224, 225);
   box-shadow: rgba(198, 199, 200, 0.25) 0px 25px 50px -12px;
@@ -50,6 +57,7 @@
   padding: 10px;
 }
 
+/* Service-Card */
 .serviceCard-light {
   background-color: rgb(223, 224, 225);
   box-shadow: rgba(198, 199, 200, 0.25) 0px 25px 50px -12px;
@@ -65,6 +73,7 @@
   border-radius: 15px;
 }
 
+/* Button */
 .specialBTN {
   --bs-btn-color: #ff7b00;
   --bs-btn-border-color: #ff7b00;

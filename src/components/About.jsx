@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Development from "./Development"
 
 import Experience from "./Experience"
@@ -8,20 +8,52 @@ import Kartik_ProfileIMG2 from "../assets/Kartik_ProfileIMG2.png"
 import CV from "../assets/Kartik_CV.pdf"
 
 import "./About.css"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 export default function About(props) {
   const [aboutIntroLink, setAboutIntroLink] = useState("skills")
+  let tl = props.timeline
+  let about = useRef(null)
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      tl.from(about, {
+        scrollTrigger: {
+          // markers: true,
+          trigger: "#about",
+          start: "top 30%",
+          onEnter() {
+            document
+              .querySelector("#headerNavbar")
+              .classList.remove("bg-" + props.mode)
+            document.querySelector("#headerNavbar").style.backgroundColor =
+              "#ff7b00"
+            document.querySelector("#logoEnd").style.color = "#212529"
+          },
+          onLeaveBack() {
+            document
+              .querySelector("#headerNavbar")
+              .classList.add("bg-" + props.mode)
+            document.querySelector("#logoEnd").style.color = "#ff7b00"
+          },
+          scrub: true,
+        },
+      })
+    })
+    return () => ctx.revert()
+  }, [props.changeHeaderBG])
 
   const changeAboutIntroLink = (target) => {
     setAboutIntroLink(target)
-    // console.log(this.state.aboutIntroLink)
   }
 
   return (
     <div>
-      <div className="container-fluid" id="about">
-        <div className="row p-5">
-          <div className="col-md-6 col-lg-5 col-xl-4 mt-5" id="aboutProfile">
+      <div className="container-fluid" id="about" ref={(el) => (about = el)}>
+        <div className="row ">
+          <div className="col-md-6 col-lg-5 col-xl-4 p-5" id="aboutProfile">
             <div id="aboutIMG_CV">
               <div
                 className={`profileCard-${props.mode} mt-5`}
