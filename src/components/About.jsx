@@ -16,7 +16,7 @@ export default function About(props) {
   const [aboutIntroLink, setAboutIntroLink] = useState("skills")
   let tl = props.timeline
   let about = useRef(null)
-
+  const { innerHeight } = window
   useEffect(() => {
     let ctx = gsap.context(() => {
       tl.from(about, {
@@ -30,7 +30,9 @@ export default function About(props) {
               .classList.remove("bg-" + props.mode)
             document.querySelector("#headerNavbar").style.backgroundColor =
               "#ff7b00"
-            document.querySelector("#logoEnd").style.color = "#212529"
+            props.mode === "dark"
+              ? (document.querySelector("#logoEnd").style.color = "#212529")
+              : (document.querySelector("#logoEnd").style.color = "#f8f9fa")
           },
           onLeaveBack() {
             document
@@ -41,9 +43,42 @@ export default function About(props) {
           scrub: true,
         },
       })
+
+      let tlAbout = new gsap.timeline({
+        scrollTrigger: {
+          trigger: about,
+          scroller: "body",
+          markers: true,
+          start: "top 0",
+          end: "+=100%",
+          scrub: true,
+          pin: true,
+        },
+      })
+      // tlAbout.from("#about", { opacity: 0 })
+      tlAbout.from("#aboutHeading", {
+        x: "2200%",
+        y: 500,
+        scaleX: 50,
+        scaleY: 50,
+        duration: 3,
+      })
+      tlAbout.from("#aboutIMG_CV", {
+        opacity: 0,
+        y: 1200,
+        ease: props.ease,
+        duration: 1,
+      })
+      tlAbout.from("#profileIMG2", {
+        opacity: 0,
+        scale: 1.2,
+        ease: props.ease,
+        duration: 1,
+        delay: 1,
+      })
     })
     return () => ctx.revert()
-  }, [props.changeHeaderBG])
+  }, [props])
 
   const changeAboutIntroLink = (target) => {
     setAboutIntroLink(target)

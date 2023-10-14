@@ -31,7 +31,7 @@ export default function Home(props) {
           duration: 1,
         })
 
-      let tl2 = new gsap.timeline({
+      let tlHome = new gsap.timeline({
         scrollTrigger: {
           trigger: home,
           scroller: "body",
@@ -42,7 +42,7 @@ export default function Home(props) {
           pin: true,
         },
       })
-      tl2.to("#homeIntroText3 #specification1", {
+      tlHome.to("#homeIntroText3 #specification1", {
         opacity: 0,
         transform: "translateX(100%)",
         onUpdate: () => {
@@ -52,7 +52,7 @@ export default function Home(props) {
           setActiveSpecification("Freelancer")
         },
       })
-      tl2.fromTo(
+      tlHome.fromTo(
         "#homeIntroText3 #specification1",
         { opacity: 1, x: "0" },
         {
@@ -66,7 +66,7 @@ export default function Home(props) {
           },
         }
       )
-      tl2.fromTo(
+      tlHome.fromTo(
         "#homeIntroText3 #specification1",
         { opacity: 1, x: "0" },
         {
@@ -80,7 +80,7 @@ export default function Home(props) {
           },
         }
       )
-      tl2.fromTo(
+      tlHome.fromTo(
         "#homeIntroText3 #specification1",
         { opacity: 1, x: "0" },
         {
@@ -94,32 +94,6 @@ export default function Home(props) {
           },
         }
       )
-      // t2.fromTo(
-      //   "#homeIntroText3 #specification2",
-      //   { opacity: 0 },
-      //   { opacity: 1 }
-      // )
-      // t2.to("#homeIntroText3 #specification2", { opacity: 0 })
-      // t2.fromTo(
-      //   "#homeIntroText3 #specification3",
-      //   { opacity: 0 },
-      //   { opacity: 1 }
-      // )
-      // .to("#homeIntroText3 #specification1", {
-      //   opacity: 0,
-      //   transform: "translateX(10%)",
-      //   stagger: 0.2,
-      //   scrollTrigger: {
-      //     trigger: home,
-      //     scroller: "body",
-      //     markers: true,
-      //     start: "top 0",
-      //     end: "top -200%",
-      //     scrub: 3,
-      //     pin: true,
-      //     pinSpacing: true,
-      //   },
-      // })
     })
     return () => ctx.revert()
   }, [])

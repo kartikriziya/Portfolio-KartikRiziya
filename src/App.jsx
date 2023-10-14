@@ -12,9 +12,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
   const [mode, setMode] = useState("dark")
-  const [headerBG, setHeaderBG] = useState("#ff7b00")
-
-  let appContainer = useRef(null)
 
   // gsap
   let tl = new gsap.timeline()
@@ -37,37 +34,16 @@ export default function App() {
     }
   }
 
-  const changeHeaderBG = () => {
-    if (headerBG === null) {
-      setHeaderBG("#ff7b00")
-    } else {
-      setHeaderBG(null)
-    }
-  }
-
   return (
     <div>
       <div
         className={`container-fluid bg-mode-${mode} text-mode-${
           mode === "light" ? "dark" : "light"
         }`}
-        id="appContainer"
-        ref={(el) => (appContainer = el)}
+        id="smooth-content"
       >
-        <Header
-          mode={mode}
-          toggelMode={toggelMode}
-          timeline={tl}
-          ease={ease}
-          headerBG={headerBG}
-        />
-        <Home
-          mode={mode}
-          timeline={tl}
-          ease={ease}
-          headerBG={headerBG}
-          changeHeaderBG={changeHeaderBG}
-        />
+        <Header mode={mode} toggelMode={toggelMode} timeline={tl} ease={ease} />
+        <Home mode={mode} timeline={tl} ease={ease} />
         <About mode={mode} timeline={tl} ease={ease} />
         <Services mode={mode} timeline={tl} ease={ease} />
         <Contact mode={mode} timeline={tl} ease={ease} />
