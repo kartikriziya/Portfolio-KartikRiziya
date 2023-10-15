@@ -16,13 +16,12 @@ export default function About(props) {
   const [aboutIntroLink, setAboutIntroLink] = useState("skills")
   let tl = props.timeline
   let about = useRef(null)
-  const { innerHeight } = window
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       tl.from(about, {
         scrollTrigger: {
-          // markers: true,
-          trigger: "#about",
+          trigger: about,
           start: "top 30%",
           onEnter() {
             document
@@ -44,37 +43,73 @@ export default function About(props) {
         },
       })
 
-      let tlAbout = new gsap.timeline({
-        scrollTrigger: {
-          trigger: about,
-          scroller: "body",
-          markers: true,
-          start: "top 0",
-          end: "+=100%",
-          scrub: true,
-          pin: true,
-        },
-      })
-      // tlAbout.from("#about", { opacity: 0 })
-      tlAbout.from("#aboutHeading", {
-        x: "2200%",
-        y: 500,
-        scaleX: 50,
-        scaleY: 50,
-        duration: 3,
-      })
-      tlAbout.from("#aboutIMG_CV", {
-        opacity: 0,
-        y: 1200,
-        ease: props.ease,
-        duration: 1,
-      })
-      tlAbout.from("#profileIMG2", {
-        opacity: 0,
-        scale: 1.2,
-        ease: props.ease,
-        duration: 1,
-        delay: 1,
+      let tlAbout = new gsap.timeline()
+      tlAbout
+        .from("#aboutHeading, #aboutIntroText, #myTab", {
+          opacity: 0,
+          textWeight: 0,
+          // x: "2200%",
+          // y: 500,
+          // scaleX: 50,
+          // scaleY: 50,
+          scrollTrigger: {
+            trigger: about,
+            start: "top 0",
+            scrub: 1,
+          },
+        })
+        // .from("#aboutIntroText, #myTab", {
+        //   opacity: 0,
+        //   scrollTrigger: {
+        //     trigger: about,
+        //     start: "top 0",
+        //     scrub: 1,
+        //   },
+        // })
+        .from("#aboutIMG_CV, #myTabContent", {
+          opacity: 0,
+          y: 1200,
+          ease: props.ease,
+          duration: 1,
+          scrollTrigger: {
+            trigger: about,
+            start: "top 0",
+            scrub: 3,
+          },
+        })
+        .from("#profileIMG2", {
+          opacity: 0,
+          scale: 1.2,
+          ease: props.ease,
+          duration: 1,
+          delay: 1,
+          scrollTrigger: {
+            trigger: "#aboutProfile",
+            start: "top 10%",
+            scrub: 3,
+          },
+        })
+        .from(".skill, .content", {
+          opacity: 0,
+          x: "100",
+          stagger: { amount: 0.7 },
+          ease: props.ease,
+          duration: 0.7,
+          scrollTrigger: {
+            trigger: "#aboutIMG_CV",
+            start: "top center",
+            end: "+=100%",
+            scrub: 5,
+          },
+        })
+
+      ScrollTrigger.create({
+        animation: tlAbout,
+        trigger: about,
+        scroller: "body",
+        start: "top 0",
+        end: "+=200%",
+        pin: true,
       })
     })
     return () => ctx.revert()
@@ -86,8 +121,12 @@ export default function About(props) {
 
   return (
     <div>
-      <div className="container-fluid" id="about" ref={(el) => (about = el)}>
-        <div className="row ">
+      <div
+        className="container-fluid pt-5"
+        id="about"
+        ref={(el) => (about = el)}
+      >
+        <div className="row pt-5">
           <div className="col-md-6 col-lg-5 col-xl-4 p-5" id="aboutProfile">
             <div id="aboutIMG_CV">
               <div
@@ -184,15 +223,15 @@ export default function About(props) {
               <div className="tab-content" id="myTabContent">
                 {/* Skills */}
                 {aboutIntroLink === "skills" && (
-                  <Development mode={props.mode} />
+                  <Development mode={props.mode} ease={props.ease} />
                 )}
                 {/* Experience */}
                 {aboutIntroLink === "experience" && (
-                  <Experience mode={props.mode} />
+                  <Experience mode={props.mode} ease={props.ease} />
                 )}
                 {/* Education */}
                 {aboutIntroLink === "education" && (
-                  <Education mode={props.mode} />
+                  <Education mode={props.mode} ease={props.ease} />
                 )}
               </div>
             </div>

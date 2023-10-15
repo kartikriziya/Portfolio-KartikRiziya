@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, useEffect, useRef } from "react"
 
 import Skill from "./Skill"
 
@@ -20,6 +20,9 @@ import Office from "../assets/office.png"
 import Vba from "../assets/vba.png"
 
 import "./Development.css"
+import { gsap } from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Development(props) {
   return (

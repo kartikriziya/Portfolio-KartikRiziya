@@ -31,17 +31,7 @@ export default function Home(props) {
           duration: 1,
         })
 
-      let tlHome = new gsap.timeline({
-        scrollTrigger: {
-          trigger: home,
-          scroller: "body",
-          markers: true,
-          start: "top 0",
-          end: "top -200%",
-          scrub: 3,
-          pin: true,
-        },
-      })
+      let tlHome = new gsap.timeline()
       tlHome.to("#homeIntroText3 #specification1", {
         opacity: 0,
         transform: "translateX(100%)",
@@ -94,6 +84,17 @@ export default function Home(props) {
           },
         }
       )
+
+      ScrollTrigger.create({
+        animation: tlHome,
+        trigger: home,
+        scroller: "body",
+        markers: true,
+        start: "top 0",
+        end: "top -200%",
+        scrub: 3,
+        pin: true,
+      })
     })
     return () => ctx.revert()
   }, [])

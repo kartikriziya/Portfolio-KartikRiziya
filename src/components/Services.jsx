@@ -9,8 +9,8 @@ import "./Services.css"
 export default function Services(props) {
   return (
     <div>
-      <div className="container-fluid" id="services">
-        <div className="row">
+      <div className="container-fluid pt-5" id="services">
+        <div className="row pt-5">
           <div className="col-12 p-5">
             <div className="ps-5" id="servicesHeading">
               <h1>Services</h1>
@@ -18,7 +18,7 @@ export default function Services(props) {
           </div>
         </div>
 
-        <div className="row ps-5 pe-5">
+        <div className="row p-5">
           <div className="col-md-6 col-xl-4 mb-5 ps-5 pe-5">
             <div className={`serviceCard-${props.mode}`}>
               <div className="row">

@@ -56,13 +56,13 @@
   flex-direction: row;
   cursor: default;
 }
-.skill {
+.skillIMG {
   height: 50px;
   width: fit-content;
   cursor: pointer;
   transition: height 0.3s;
 }
-.skill:hover {
+.skillIMG:hover {
   height: 100px;
 }
 

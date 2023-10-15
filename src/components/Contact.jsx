@@ -10,7 +10,7 @@ import "./Contact.css"
 export default function Contact(props) {
   return (
     <div>
-      <div className="container-fluid" id="contact">
+      <div className="container-fluid pt-5" id="contact">
         <div className="row pt-5 pb-5">
           <div className="col-12 text-center" id="contactHeading">
             <h1>Contact me</h1>
