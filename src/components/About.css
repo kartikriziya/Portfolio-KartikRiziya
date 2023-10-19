@@ -57,6 +57,9 @@
   flex-wrap: wrap;
   cursor: default;
 }
+.skill {
+  height: 50px;
+}
 .skillIMG {
   height: 50px;
   width: fit-content;
