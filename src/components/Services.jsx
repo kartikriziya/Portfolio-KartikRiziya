@@ -69,7 +69,12 @@ export default function Services(props) {
               <div className="row">
                 <div className="col-12">
                   <div id="serviceIMG_Head">
-                    <img src={WWW} alt="web" id="serviceIMG" />
+                    <img
+                      src={WWW}
+                      alt="web"
+                      className="responsive"
+                      id="serviceIMG"
+                    />
                     <h1>Web Development</h1>
                   </div>
                 </div>
@@ -95,7 +100,12 @@ export default function Services(props) {
               <div className="row">
                 <div className="col-12">
                   <div id="serviceIMG_Head">
-                    <img src={Design} alt="web" id="serviceIMG" />
+                    <img
+                      src={Design}
+                      alt="web"
+                      className="responsive"
+                      id="serviceIMG"
+                    />
                     <h1>Web Design</h1>
                   </div>
                 </div>
@@ -117,7 +127,12 @@ export default function Services(props) {
               <div className="row">
                 <div className="col-12">
                   <div id="serviceIMG_Head">
-                    <img src={Code} alt="web" id="serviceIMG" />
+                    <img
+                      src={Code}
+                      alt="web"
+                      className="responsive"
+                      id="serviceIMG"
+                    />
                     <h1>App Development</h1>
                   </div>
                 </div>
