@@ -54,6 +54,7 @@
 .developmentContent {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   cursor: default;
 }
 .skillIMG {

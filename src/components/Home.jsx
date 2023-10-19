@@ -89,7 +89,6 @@ export default function Home(props) {
         animation: tlHome,
         trigger: home,
         scroller: "body",
-        markers: true,
         start: "top 0",
         end: "top -200%",
         scrub: 3,
@@ -103,8 +102,8 @@ export default function Home(props) {
     <div>
       <div className="container-fluid" id="home" ref={(el) => (home = el)}>
         <div className="row">
-          <div className="col-md-6 ps-5" id="homeIntro">
-            <div className="ms-5 ps-5" id="homeIntroText">
+          <div className="col-md-6 ps-sm-5" id="homeIntro">
+            <div className="ms-5 ps-sm-5" id="homeIntroText">
               <h4 id="homeIntroText1">Hello, my name is </h4>
               <h1 id="homeIntroText2">Kartik Riziya</h1>
               <div id="homeIntroText3">
@@ -125,7 +124,7 @@ export default function Home(props) {
               </button>
             </div>
           </div>
-          <div className="col-md-6 mt-5 p-5" id="homeProfile">
+          <div className="col-md-6 mt-sm-5 p-sm-5" id="homeProfile">
             <div className={`Card profileCard-${props.mode} mt-5`}>
               <img
                 src={Kartik_ProfileIMG}

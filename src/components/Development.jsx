@@ -38,7 +38,7 @@ export default function Development(props) {
           <div className="heading">
             <h6 style={{ color: "#ff7b00" }}>Front-End Development</h6>
           </div>
-          <div className="ps-5 developmentContent">
+          <div className="ps-sm-5 developmentContent">
             <Skill mode={props.mode} skillIMG={Html} />
             <Skill mode={props.mode} skillIMG={Css} />
             <Skill mode={props.mode} skillIMG={JavaScript} />
@@ -54,7 +54,7 @@ export default function Development(props) {
           <div className="heading">
             <h6 style={{ color: "#ff7b00" }}>Back-End Development</h6>
           </div>
-          <div className="ps-5 developmentContent">
+          <div className="ps-sm-5 developmentContent">
             <Skill mode={props.mode} skillIMG={Php} />
             <Skill mode={props.mode} skillIMG={PhpMyAdmin} />
             <Skill mode={props.mode} skillIMG={MySQL} />
@@ -65,7 +65,7 @@ export default function Development(props) {
         <div className="mt-3" id="excelDevelopment">
           <div className="heading">
             <h6 style={{ color: "#ff7b00" }}>Microsoft-App Development</h6>
-            <div className="ps-5 developmentContent">
+            <div className="ps-sm-5 developmentContent">
               <Skill mode={props.mode} skillIMG={Office} />
               <Skill mode={props.mode} skillIMG={Vba} />
             </div>
