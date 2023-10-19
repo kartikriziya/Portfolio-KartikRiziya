@@ -13,4 +13,5 @@
 #serviceIMG {
   height: 100px;
   width: fit-content;
+  max-width: 125px;
 }
