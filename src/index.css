@@ -43,7 +43,7 @@
   background-color: rgb(223, 224, 225);
   box-shadow: rgba(198, 199, 200, 0.25) 0px 25px 50px -12px;
   height: fit-content;
-  width: max-content;
+  width: fit-content;
   border-radius: 15px;
   margin: 5px;
   padding: 10px;
@@ -52,7 +52,7 @@
   background-color: rgb(30, 33, 37);
   box-shadow: rgba(26, 30, 33, 0.25) 0px 25px 50px -12px;
   height: fit-content;
-  width: max-content;
+  width: fit-content;
   border-radius: 15px;
   margin: 5px;
   padding: 10px;
