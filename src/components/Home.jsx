@@ -1,30 +1,30 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from 'react'
 
-import Kartik_ProfileIMG from "../assets/Kartik_ProfileIMG.png"
+import Kartik_ProfileIMG from '../assets/Kartik_ProfileIMG.png'
 
-import "./Home.css"
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
+import './Home.css'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home(props) {
-  const [activeSpecification, setActiveSpecification] = useState("Programmer")
+  const [activeSpecification, setActiveSpecification] = useState('Programmer')
 
   let tl = props.timeline
   let home = useRef(null)
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      tl.from("#homeIntroText1", { opacity: 0, x: "-100", duration: 0.5 })
-        .from("#homeIntroText2", { opacity: 0, x: "-100", duration: 0.7 })
-        .from("#homeIntroText3", { opacity: 0, x: "-100", duration: 0.6 })
-        .from(".specialBTN", {
+      tl.from('#homeIntroText1', { opacity: 0, x: '-100', duration: 0.5 })
+        .from('#homeIntroText2', { opacity: 0, x: '-100', duration: 0.7 })
+        .from('#homeIntroText3', { opacity: 0, x: '-100', duration: 0.6 })
+        .from('.specialBTN', {
           opacity: 0,
-          y: "100",
+          y: '100',
           duration: 0.5,
         })
-        .from(".Card", { opacity: 0, y: 1200, ease: props.ease, duration: 0.8 })
-        .from("#profileIMG", {
+        .from('.Card', { opacity: 0, y: 1200, ease: props.ease, duration: 0.8 })
+        .from('#profileIMG', {
           opacity: 0,
           scale: 1.2,
           ease: props.ease,
@@ -32,55 +32,55 @@ export default function Home(props) {
         })
 
       let tlHome = new gsap.timeline()
-      tlHome.to("#homeIntroText3 #specification1", {
+      tlHome.to('#homeIntroText3 #specification1', {
         opacity: 0,
-        transform: "translateX(100%)",
+        transform: 'translateX(100%)',
         onUpdate: () => {
-          setActiveSpecification("Programmer")
+          setActiveSpecification('Programmer')
         },
         onComplete: () => {
-          setActiveSpecification("Freelancer")
+          setActiveSpecification('Freelancer')
         },
       })
       tlHome.fromTo(
-        "#homeIntroText3 #specification1",
-        { opacity: 1, x: "0" },
+        '#homeIntroText3 #specification1',
+        { opacity: 1, x: '0' },
         {
           opacity: 0,
-          transform: "translateX(100%)",
+          transform: 'translateX(100%)',
           onUpdate: () => {
-            setActiveSpecification("Freelancer")
+            setActiveSpecification('Freelancer')
           },
           onComplete: () => {
-            setActiveSpecification("Designer")
+            setActiveSpecification('Designer')
           },
         }
       )
       tlHome.fromTo(
-        "#homeIntroText3 #specification1",
-        { opacity: 1, x: "0" },
+        '#homeIntroText3 #specification1',
+        { opacity: 1, x: '0' },
         {
           opacity: 0,
-          transform: "translateX(100%)",
+          transform: 'translateX(100%)',
           onUpdate: () => {
-            setActiveSpecification("Designer")
+            setActiveSpecification('Designer')
           },
           onComplete: () => {
-            setActiveSpecification("Developer")
+            setActiveSpecification('Developer')
           },
         }
       )
       tlHome.fromTo(
-        "#homeIntroText3 #specification1",
-        { opacity: 1, x: "0" },
+        '#homeIntroText3 #specification1',
+        { opacity: 1, x: '0' },
         {
           opacity: 0,
-          transform: "translateX(100%)",
+          transform: 'translateX(100%)',
           onUpdate: () => {
-            setActiveSpecification("Developer")
+            setActiveSpecification('Developer')
           },
           onComplete: () => {
-            setActiveSpecification("Developer")
+            setActiveSpecification('Developer')
           },
         }
       )
@@ -88,9 +88,9 @@ export default function Home(props) {
       ScrollTrigger.create({
         animation: tlHome,
         trigger: home,
-        scroller: "body",
-        start: "top 0",
-        end: "top -200%",
+        scroller: 'body',
+        start: 'top 0',
+        end: 'top -200%',
         scrub: 3,
         pin: true,
       })
@@ -100,37 +100,37 @@ export default function Home(props) {
 
   return (
     <div>
-      <div className="container-fluid" id="home" ref={(el) => (home = el)}>
-        <div className="row">
-          <div className="col-md-6 ps-sm-5" id="homeIntro">
-            <div className="ms-5 ps-sm-5" id="homeIntroText">
-              <h4 id="homeIntroText1">Hello, my name is </h4>
-              <h1 id="homeIntroText2">Kartik Riziya</h1>
-              <div id="homeIntroText3">
+      <div className='container-fluid' id='home' ref={(el) => (home = el)}>
+        <div className='row'>
+          <div className='col-md-6 ps-sm-5' id='homeIntro'>
+            <div className='ms-5 ps-sm-5' id='homeIntroText'>
+              <h4 id='homeIntroText1'>Hello, my name is </h4>
+              <h1 id='homeIntroText2'>Kartik Riziya</h1>
+              <div id='homeIntroText3'>
                 <h2>And I'm a</h2>
-                <div id="specification1">
-                  <h2 className="ms-2">
-                    <span style={{ color: "#ff7b00" }}>
+                <div id='specification1'>
+                  <h2 className='ms-2'>
+                    <span style={{ color: '#ff7b00' }}>
                       {activeSpecification}
                     </span>
                   </h2>
                 </div>
               </div>
 
-              <button className="btn specialBTN">
-                <a href="#contact" className="BTN_Link">
+              <button className='btn specialBTN'>
+                <a href='#contact' className='BTN_Link'>
                   Hire me
                 </a>
               </button>
             </div>
           </div>
-          <div className="col-md-6 mt-sm-5 p-sm-5" id="homeProfile">
+          <div className='col-md-6 mt-sm-5 p-sm-5' id='homeProfile'>
             <div className={`Card profileCard-${props.mode} mt-5`}>
               <img
                 src={Kartik_ProfileIMG}
-                alt="profileIMG"
-                className="responsive mt-5"
-                id="profileIMG"
+                alt='profileIMG'
+                className='responsive mt-5'
+                id='profileIMG'
               />
             </div>
           </div>
