@@ -59,7 +59,7 @@
 }
 .skillIMG {
   height: 50px;
-  width: 100%;
+  width: auto;
   cursor: pointer;
   transition: height 0.3s;
 }
