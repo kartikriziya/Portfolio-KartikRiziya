@@ -20,7 +20,7 @@
 }
 
 #homeIntroText3,
-#specification1 {
+#specifications {
   display: flex;
   flex-direction: row;
 }

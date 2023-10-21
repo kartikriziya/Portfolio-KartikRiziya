@@ -10,40 +10,29 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Services(props) {
+  let tlServices = new gsap.timeline()
   let services = useRef(null)
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      let tlServices = new gsap.timeline()
-
       tlServices
         .from("#servicesHeading", {
           opacity: 0,
-          scrollTrigger: {
-            trigger: services,
-            start: "top 0",
-            scrub: 1,
-          },
         })
         .from(".service", {
           opacity: 0,
-          y: "100",
-          stagger: { amount: 0.7 },
-          duration: 1,
+          x: "-100",
+          stagger: { amount: 0.3 },
           ease: props.ease,
-          scrollTrigger: {
-            trigger: services,
-            start: "top 0",
-            scrub: 1,
-          },
+          duration: 1,
         })
 
       ScrollTrigger.create({
+        // markers: true,
+        animation: tlServices,
         trigger: services,
         scroller: "body",
-        start: "top 0",
-        end: "+=100%",
-        pin: true,
+        start: "top 30%",
       })
     })
     return () => ctx.revert()
@@ -51,7 +40,7 @@ export default function Services(props) {
   return (
     <div>
       <div
-        className="container-fluid pt-5"
+        className="container-fluid"
         id="services"
         ref={(el) => (services = el)}
       >

@@ -6,8 +6,8 @@ import "./Footer.css"
 export default function Footer() {
   return (
     <div>
-      <div className="container pt-5" id="footer">
-        <div className="row  pt-5">
+      <div className="container" id="footer">
+        <div className="row">
           <div className="col-12" id="socialLinks">
             <a
               href="https://www.linkedin.com/in/kartik-riziya-6b3b83156"
@@ -35,7 +35,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="row pb-5">
+        <div className="row">
           <div className="col-12" id="copyright">
             <h6>Copyright &copy;2023 All rights reserved.</h6>
           </div>

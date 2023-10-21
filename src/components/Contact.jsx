@@ -11,88 +11,53 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Contact(props) {
+  let tlContact = new gsap.timeline()
   let contact = useRef(null)
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      let tlContact = new gsap.timeline()
-
       tlContact
         .from("#contactHeading", {
           opacity: 0,
-          scrollTrigger: {
-            trigger: contact,
-            start: "top 0",
-            scrub: 1,
-          },
         })
         .from(".contactDetailsHeading", {
           opacity: 0,
           y: "-100",
-          stagger: { amount: 0.2 },
-          duration: 1,
+          stagger: { amount: 0.1 },
           ease: props.ease,
-          scrollTrigger: {
-            trigger: contact,
-            start: "top 0",
-            scrub: 1,
-          },
+          duration: 1,
         })
         .from("#contactDetailsIntro p", {
           opacity: 0,
           x: "-100",
-          stagger: { amount: 0.5 },
-          duration: 1,
+          stagger: { amount: 0.3 },
           ease: props.ease,
-          scrollTrigger: {
-            trigger: contact,
-            start: "top 0",
-            scrub: 1,
-          },
         })
         .from(".individualDetailIcon", {
           opacity: 0,
           y: "-100",
           stagger: { amount: 0.2 },
-          duration: 1,
           ease: props.ease,
-          scrollTrigger: {
-            trigger: contact,
-            start: "top 0",
-            scrub: 1,
-          },
         })
         .from(".individualDetailTYP", {
           opacity: 0,
           y: "100",
           stagger: { amount: 0.2 },
-          duration: 1,
           ease: props.ease,
-          scrollTrigger: {
-            trigger: contact,
-            start: "top 0",
-            scrub: 1,
-          },
         })
         .from(".form-floating", {
           opacity: 0,
           x: "100",
           stagger: { amount: 0.5 },
-          duration: 1,
           ease: props.ease,
-          scrollTrigger: {
-            trigger: contact,
-            start: "top 0",
-            scrub: 1,
-          },
         })
 
       ScrollTrigger.create({
+        // markers: true,
+        animation: tlContact,
         trigger: contact,
         scroller: "body",
-        start: "top 0",
-        end: "+=200%",
-        pin: true,
+        start: "top 30%",
       })
     })
     return () => ctx.revert()
@@ -101,7 +66,7 @@ export default function Contact(props) {
   return (
     <div>
       <div
-        className="container-fluid pt-5"
+        className="container-fluid"
         id="contact"
         ref={(el) => (contact = el)}
       >
