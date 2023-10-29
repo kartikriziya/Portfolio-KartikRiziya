@@ -1,4 +1,4 @@
-import React, { Component, createRef, useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 
 import companyLogo from "../assets/bootstrap-logo.svg"
@@ -13,20 +13,15 @@ export default function Header(props) {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      tl.from(".navbar-brand", 0.7, { opacity: 0, x: "-100" }).from(
-        ".nav-item",
-        0.8,
+      tl.from(".navbar-brand", { opacity: 0, x: "-100", duration: 0.5 }).from(
+        ".nav-item, #toggleModeSwitch",
         {
           opacity: 0,
           y: "-100",
-          stagger: { amount: 0.7 },
+          stagger: { amount: 0.5 },
           ease: props.ease,
         }
       )
-      gsap.from("#toggleModeSwitch", 0.7, {
-        opacity: 0,
-        x: "100",
-      })
     })
     return () => ctx.revert()
   }, [])

@@ -25,7 +25,7 @@ export default function Contact(props) {
           y: "-100",
           stagger: { amount: 0.1 },
           ease: props.ease,
-          duration: 1,
+          duration: 0.7,
         })
         .from("#contactDetailsIntro p", {
           opacity: 0,
@@ -57,7 +57,7 @@ export default function Contact(props) {
         animation: tlContact,
         trigger: contact,
         scroller: "body",
-        start: "top 30%",
+        start: "top 70%",
       })
     })
     return () => ctx.revert()

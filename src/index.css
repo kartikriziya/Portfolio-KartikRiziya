@@ -1,6 +1,7 @@
 :root {
-  /* color: rgba(255, 255, 255, 0.87);
-  background-color: #212529; */
+  overflow-x: hidden;
+}
+body {
   overflow-x: hidden;
 }
 

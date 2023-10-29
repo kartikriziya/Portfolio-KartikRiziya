@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import "./App.css"
 import { gsap, Power3 } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
+import LoadingPage from "./components/LoadingPage"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
 
   return (
     <div>
+      {/* <LoadingPage timeline={tl} ease={ease} /> */}
       <div
         className={`container-fluid bg-mode-${mode} text-mode-${
           mode === "light" ? "dark" : "light"

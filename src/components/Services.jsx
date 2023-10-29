@@ -32,7 +32,7 @@ export default function Services(props) {
         animation: tlServices,
         trigger: services,
         scroller: "body",
-        start: "top 30%",
+        start: "top 70%",
       })
     })
     return () => ctx.revert()

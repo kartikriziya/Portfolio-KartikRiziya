@@ -22,9 +22,9 @@ export default function Home(props) {
     })
 
     let ctx = gsap.context(() => {
-      tl.from("#homeIntroText1", { opacity: 0, x: "-100", duration: 0.5 })
-        .from("#homeIntroText2", { opacity: 0, x: "-100", duration: 0.7 })
-        .from("#homeIntroText3", { opacity: 0, x: "-100", duration: 0.6 })
+      tl.from("#homeIntroText1", { opacity: 0, x: "-100", duration: 0.3 })
+        .from("#homeIntroText2", { opacity: 0, x: "-100", duration: 0.5 })
+        .from("#homeIntroText3", { opacity: 0, x: "-100", duration: 0.4 })
         .from(".specialBTN", {
           opacity: 0,
           y: "100",
@@ -35,7 +35,7 @@ export default function Home(props) {
           opacity: 0,
           scale: 1.2,
           ease: props.ease,
-          duration: 1,
+          duration: 0.5,
         })
 
       // let tlHome = new gsap.timeline()

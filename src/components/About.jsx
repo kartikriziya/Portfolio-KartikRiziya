@@ -43,7 +43,7 @@ export default function About(props) {
         animation: tlAbout,
         trigger: about,
         scroller: "body",
-        start: "top center",
+        start: "top 70%",
         onEnter() {
           // header nav-link hover color
           document
