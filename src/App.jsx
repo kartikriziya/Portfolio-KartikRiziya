@@ -38,7 +38,7 @@ export default function App() {
 
   return (
     <div>
-      {/* <LoadingPage timeline={tl} ease={ease} /> */}
+      <LoadingPage timeline={tl} ease={ease} />
       <div
         className={`container-fluid bg-mode-${mode} text-mode-${
           mode === "light" ? "dark" : "light"
