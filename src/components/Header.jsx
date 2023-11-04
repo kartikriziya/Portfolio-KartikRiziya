@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 
 import companyLogo from "../assets/bootstrap-logo.svg"
@@ -10,6 +10,13 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Header(props) {
   let tl = props.timeline
   let headerNavbar = useRef(null)
+
+  const updateActiveLink = (event) => {
+    const allLinks = document.querySelectorAll(".nav-link")
+    allLinks.forEach((link) => link.classList.remove("active"))
+
+    document.querySelector("#" + event.currentTarget.id).classList.add("active")
+  }
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -64,22 +71,46 @@ export default function Header(props) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 headerUL">
               <li className="nav-item ">
-                <a className="nav-link active " aria-current="page" href="#">
+                <a
+                  className="nav-link active "
+                  id="homeLink"
+                  aria-current="page"
+                  href="#"
+                  onClick={updateActiveLink}
+                >
                   Home
                 </a>
               </li>
               <li className="nav-item ">
-                <a className="nav-link  " aria-current="page" href="#about">
+                <a
+                  className="nav-link  "
+                  id="aboutLink"
+                  aria-current="page"
+                  href="#about"
+                  onClick={updateActiveLink}
+                >
                   About
                 </a>
               </li>
               <li className="nav-item ">
-                <a className="nav-link  " aria-current="page" href="#services">
+                <a
+                  className="nav-link  "
+                  id="servicesLink"
+                  aria-current="page"
+                  href="#services"
+                  onClick={updateActiveLink}
+                >
                   Services
                 </a>
               </li>
               <li className="nav-item ">
-                <a className="nav-link  " aria-current="page" href="#contact">
+                <a
+                  className="nav-link  "
+                  id="contactLink"
+                  aria-current="page"
+                  href="#contact"
+                  onClick={updateActiveLink}
+                >
                   Contact
                 </a>
               </li>
