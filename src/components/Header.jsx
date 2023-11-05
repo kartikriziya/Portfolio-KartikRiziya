@@ -11,13 +11,6 @@ export default function Header(props) {
   let tl = props.timeline
   let headerNavbar = useRef(null)
 
-  const updateActiveLink = (event) => {
-    const allLinks = document.querySelectorAll(".nav-link")
-    allLinks.forEach((link) => link.classList.remove("active"))
-
-    document.querySelector("#" + event.currentTarget.id).classList.add("active")
-  }
-
   useEffect(() => {
     let ctx = gsap.context(() => {
       tl.from(".navbar-brand", { opacity: 0, x: "-100", duration: 0.5 }).from(
@@ -32,6 +25,13 @@ export default function Header(props) {
     })
     return () => ctx.revert()
   }, [])
+
+  const updateActiveLink = (event) => {
+    const allLinks = document.querySelectorAll(".nav-link")
+    allLinks.forEach((link) => link.classList.remove("active"))
+
+    document.querySelector("#" + event.currentTarget.id).classList.add("active")
+  }
 
   return (
     <div>

@@ -10,10 +10,11 @@ import "./App.css"
 import { gsap, Power3 } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import LoadingPage from "./components/LoadingPage"
+import Dummy from "./components/Dummy"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [mode, setMode] = useState("dark")
 
   // gsap
@@ -21,7 +22,7 @@ export default function App() {
   let ease = Power3.easeOut()
 
   useEffect(() => {
-    setLoading(true)
+    // setLoading(true)
 
     if (mode === "light") {
       document.body.style.backgroundColor = "#f8f9fa"
@@ -60,6 +61,7 @@ export default function App() {
             ease={ease}
           />
           <Home mode={mode} timeline={tl} ease={ease} />
+          <Dummy mode={mode} />
           <About mode={mode} ease={ease} />
           <Services mode={mode} ease={ease} />
           <Contact mode={mode} ease={ease} />

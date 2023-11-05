@@ -36,7 +36,7 @@ export default function Services(props) {
       })
     })
     return () => ctx.revert()
-  }, [props])
+  }, [])
   return (
     <div>
       <div

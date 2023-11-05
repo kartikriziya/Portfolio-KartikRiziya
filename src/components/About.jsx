@@ -44,45 +44,17 @@ export default function About(props) {
         trigger: about,
         scroller: "body",
         start: "top 70%",
-        onEnter() {
-          // header nav-link hover color
-          document
-            .querySelector("#headerNavbar .navbar-nav")
-            .classList.remove("headerUL")
-
-          // header background-color
-          document
-            .querySelector("#headerNavbar")
-            .classList.remove("bg-" + props.mode)
-          document.querySelector("#headerNavbar").style.backgroundColor =
-            "#ff7b00"
-
-          // header logo end color
-          props.mode === "dark"
-            ? (document.querySelector("#logoEnd").style.color = "#212529")
-            : (document.querySelector("#logoEnd").style.color = "#f8f9fa")
-        },
-        onLeaveBack() {
-          // header nav-link hover color
-          document
-            .querySelector("#headerNavbar .navbar-nav")
-            .classList.add("headerUL")
-
-          // header background-color
-          document
-            .querySelector("#headerNavbar")
-            .classList.add("bg-" + props.mode)
-
-          // header logo end color
-          document.querySelector("#logoEnd").style.color = "#ff7b00"
-        },
       })
     })
     return () => ctx.revert()
-  }, [props])
+  }, [])
 
-  const changeAboutIntroLink = (target) => {
+  const changeAboutIntroLink = (event, target) => {
     setAboutIntroLink(target)
+    // alert(event.id)
+    const allLinks = document.querySelectorAll(".nav-link")
+    allLinks.forEach((link) => link.classList.remove("active"))
+    document.querySelector("#" + event.id).classList.add("active")
   }
 
   return (
@@ -131,55 +103,58 @@ export default function About(props) {
             <div id="aboutIntroLinks">
               <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item" role="presentation">
-                  <button
+                  <a
                     className={`nav-link text-mode-${
                       props.mode === "light" ? "dark" : "light"
                     } active`}
-                    id="home-tab"
+                    id="skills-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#skills"
                     type="button"
                     role="tab"
-                    aria-controls="home"
                     aria-selected="true"
-                    onClick={() => changeAboutIntroLink("skills")}
+                    onClick={(event) =>
+                      changeAboutIntroLink(event.currentTarget, "skills")
+                    }
                   >
                     Skills
-                  </button>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button
+                  <a
                     className={`nav-link text-mode-${
                       props.mode === "light" ? "dark" : "light"
                     }`}
-                    id="profile-tab"
+                    id="experience-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#experience"
                     type="button"
                     role="tab"
-                    aria-controls="profile"
                     aria-selected="false"
-                    onClick={() => changeAboutIntroLink("experience")}
+                    onClick={(event) =>
+                      changeAboutIntroLink(event.currentTarget, "experience")
+                    }
                   >
                     Experience
-                  </button>
+                  </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button
+                  <a
                     className={`nav-link text-mode-${
                       props.mode === "light" ? "dark" : "light"
                     }`}
-                    id="contact-tab"
+                    id="education-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#education"
                     type="button"
                     role="tab"
-                    aria-controls="contact"
                     aria-selected="false"
-                    onClick={() => changeAboutIntroLink("education")}
+                    onClick={(event) =>
+                      changeAboutIntroLink(event.currentTarget, "education")
+                    }
                   >
                     Education
-                  </button>
+                  </a>
                 </li>
               </ul>
               <div className="tab-content" id="myTabContent">

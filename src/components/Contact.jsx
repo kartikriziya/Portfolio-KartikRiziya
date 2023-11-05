@@ -61,7 +61,7 @@ export default function Contact(props) {
       })
     })
     return () => ctx.revert()
-  }, [props])
+  }, [])
 
   return (
     <div>

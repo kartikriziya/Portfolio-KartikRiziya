@@ -17,7 +17,7 @@ export default function Education(props) {
             <h5 style={{ color: "#ff7b00" }}>2021 - Current</h5>
           </div>
           <div className="ps-1 content">
-            <p>BSc. Computer Science</p>
+            <p>B.Sc. Computer Science</p>
           </div>
         </div>
 
