@@ -4,7 +4,7 @@ import Development from "./Development"
 import Experience from "./Experience"
 import Education from "./Education"
 
-import Kartik_ProfileIMG2 from "../assets/Kartik_ProfileIMG2.png"
+import Kartik_ProfileIMG2 from "../assets/Kartik_ProfileIMG3.png"
 import CV from "../assets/Kartik_CV.pdf"
 
 import "./About.css"

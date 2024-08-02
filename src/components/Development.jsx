@@ -18,6 +18,7 @@ import Nodejs from "../assets/nodejs.png"
 
 import Office from "../assets/office.png"
 import Vba from "../assets/vba.png"
+import PowerBI from "../assets/powerbi.png"
 
 import "./Development.css"
 
@@ -65,6 +66,7 @@ export default function Development(props) {
             <div className="ps-sm-5 developmentContent">
               <Skill mode={props.mode} skillIMG={Office} />
               <Skill mode={props.mode} skillIMG={Vba} />
+              <Skill mode={props.mode} skillIMG={PowerBI} />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 
-import Kartik_ProfileIMG from "../assets/Kartik_ProfileIMG.png"
+import Kartik_ProfileIMG from "../assets/Kartik_ProfileIMG1.png"
 
 import "./Home.css"
 import Typed from "typed.js"
