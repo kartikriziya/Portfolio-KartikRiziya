@@ -1,0 +1,15 @@
+#socialLinks,
+#copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.individualSocialIcon {
+  color: #ff7b00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 25px;
+  margin: 45px;
+}

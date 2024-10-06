@@ -1,50 +1,30 @@
 import React, { useState, useEffect, useRef } from "react"
+import PropTypes from "prop-types"
 
+import companyLogo from "../assets/bootstrap-logo.svg"
 import "./Header.css"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
-gsap.registerPlugin(useGSAP, ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Header(props) {
   let tl = props.timeline
-  const headerNavbarContainer = useRef()
+  let headerNavbar = useRef(null)
 
-  // useEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     tl.from(".navbar-brand", { opacity: 0, x: "-100", duration: 0.5 }).from(
-  //       ".nav-item, #toggleModeSwitch",
-  //       {
-  //         opacity: 0,
-  //         y: "-100",
-  //         stagger: { amount: 0.5 },
-  //         ease: props.ease,
-  //       }
-  //     )
-  //   })
-  //   return () => ctx.revert()
-  // }, [])
-
-  useGSAP(
-    () => {
-      tl &&
-        tl
-          .from(".navbar-brand", {
-            opacity: 0,
-            x: "-100",
-            delay: 1,
-            duration: 0.5,
-            ease: "power1.out",
-          })
-          .from(".nav-item, #toggleModeSwitch", {
-            opacity: 0,
-            y: "-100",
-            stagger: { amount: 0.5 },
-            ease: "power1.out",
-          })
-    },
-    { scope: headerNavbarContainer }
-  )
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      tl.from(".navbar-brand", { opacity: 0, x: "-100", duration: 0.5 }).from(
+        ".nav-item, #toggleModeSwitch",
+        {
+          opacity: 0,
+          y: "-100",
+          stagger: { amount: 0.5 },
+          ease: props.ease,
+        }
+      )
+    })
+    return () => ctx.revert()
+  }, [])
 
   const updateActiveLink = (event) => {
     const allLinks = document.querySelectorAll(".nav-link")
@@ -54,13 +34,21 @@ export default function Header(props) {
   }
 
   return (
-    <div ref={headerNavbarContainer}>
+    <div>
       <nav
         className={`navbar fixed-top navbar-expand-md navbar-${props.mode} bg-${props.mode} headerNavbar`}
         id="headerNavbar"
+        ref={(el) => (headerNavbar = el)}
       >
         <div className="container" id="headerNavbar">
           <a className="navbar-brand" href="#">
+            {/* <img
+                src={companyLogo}
+                alt="Logo"
+                width="30"
+                height="24"
+                className="d-inline-block align-text-top"
+              /> */}
             <b>
               Portfo
               <span id="logoEnd" style={{ color: "#ff7b00" }}>

@@ -6,6 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Dummy(props) {
+  let tlDummy = new gsap.timeline()
   let dummy = useRef(null)
 
   useEffect(() => {

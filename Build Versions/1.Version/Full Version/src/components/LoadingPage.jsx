@@ -3,53 +3,63 @@ import React, { useEffect, useRef } from "react"
 import "./LoadingPage.css"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
-gsap.registerPlugin(useGSAP, ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)
 
 export default function LoadingPage(props) {
   let tl = props.timeline
-  const loadingPageContainer = useRef()
+  let loadingPage = useRef(null)
 
-  // useEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     tl.from("#svgName", {
-  //       opacity: 0.5,
-  //       y: 21,
-  //       delay: 0.5,
-  //       duration: 1,
-  //     })
-  //     tl.to("#loadingPage", {
-  //       opacity: 1,
-  //       delay: 1,
-  //       duration: 1,
-  //     })
-  //   })
-  //   return () => ctx.revert()
-  // }, [])
+  useEffect(() => {
+    // function loaderTime() {
+    //   var loaderPercentage = 0
 
-  useGSAP(
-    () => {
-      tl &&
-        tl.from("#svgName", {
-          opacity: 0.5,
-          y: 21,
-          delay: 0.5,
-          duration: 1,
-        })
-      tl.to("#loader", {
-        opacity: 1,
-        delay: 1,
+    //   setInterval(function () {
+    //     loaderPercentage += Math.floor(Math.random() * 20)
+
+    //     if (loaderPercentage < 100) {
+    //       document.querySelector("#loaderText").innerHTML =
+    //         loaderPercentage + "%"
+    //     } else {
+    //       loaderPercentage = 100
+    //       document.querySelector("#loaderText").innerHTML =
+    //         loaderPercentage + "%"
+    //     }
+    //   }, 150)
+    // }
+    let ctx = gsap.context(() => {
+      // tl.to("#loaderText", {
+      //   delay: 0.5,
+      //   duration: 1,
+      //   onStart: loaderTime(),
+      // })
+      tl.from("#svgName", {
+        opacity: 0,
+        y: 21,
+        delay: 0.5,
         duration: 1,
       })
-    },
-    { scope: loadingPageContainer }
-  )
+      tl.to("#loadingPage", {
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+        // onComplete: () => {
+        //   document.querySelector("#loadingPage").style.height = "none"
+        // },
+      })
+    })
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <div ref={loadingPageContainer}>
-      <div className="container-fluid" id="loadingPage">
+    <div>
+      <div
+        className="container"
+        id="loadingPage"
+        ref={(el) => (loadingPage = el)}
+      >
         <div className="row">
           <div className="col-12" id="loader">
+            {/* <h1 id="loaderText">Hello...</h1> */}
             <div id="svg-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

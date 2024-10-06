@@ -1,6 +1,7 @@
 #about {
   min-height: 100vh;
-  max-width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
 }
 #aboutProfile {
   min-height: 80vh;
@@ -22,10 +23,10 @@
   justify-content: start;
 }
 #profileIMG2 {
-  height: 30vw;
-  width: 25vw;
-  border-radius: 50%;
-  object-fit: contain;
+  height: auto;
+  width: 100%;
+  border-radius: 10%;
+  opacity: 0;
 }
 
 .nav-tabs .nav-item.show .nav-link,

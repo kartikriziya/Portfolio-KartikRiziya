@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import Header from "./components/Header"
 import Home from "./components/Home"
 import About from "./components/About"
@@ -7,21 +7,19 @@ import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 
 import "./App.css"
-import { gsap } from "gsap"
+import { gsap, Power3 } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import LoadingPage from "./components/LoadingPage"
 import Dummy from "./components/Dummy"
-import NewAbout from "./components/NewAbout"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
   const [loading, setLoading] = useState(true)
   const [mode, setMode] = useState("dark")
 
-  const profileImgRef = useRef() // Create a ref for #profileIMG
-
   // gsap
   let tl = new gsap.timeline()
+  let ease = Power3.easeOut()
 
   useEffect(() => {
     // setLoading(true)
@@ -49,21 +47,25 @@ export default function App() {
   return (
     <div>
       {loading ? (
-        <LoadingPage timeline={tl} />
+        <LoadingPage timeline={tl} ease={ease} />
       ) : (
         <div
           className={`container-fluid bg-mode-${mode} text-mode-${
             mode === "light" ? "dark" : "light"
           }`}
         >
-          <Header mode={mode} toggelMode={toggelMode} timeline={tl} />
-          <Home mode={mode} timeline={tl} profileImgRef={profileImgRef} />
-          {/* <Dummy mode={mode} /> */}
-          <NewAbout mode={mode} timeline={tl} profileImgRef={profileImgRef} />
-          {/* <About mode={mode} /> */}
-          {/* <Services mode={mode} />
-          <Contact mode={mode} />
-          <Footer mode={mode} /> */}
+          <Header
+            mode={mode}
+            toggelMode={toggelMode}
+            timeline={tl}
+            ease={ease}
+          />
+          <Home mode={mode} timeline={tl} ease={ease} />
+          <Dummy mode={mode} />
+          <About mode={mode} ease={ease} />
+          <Services mode={mode} ease={ease} />
+          <Contact mode={mode} ease={ease} />
+          <Footer mode={mode} ease={ease} />
         </div>
       )}
     </div>
