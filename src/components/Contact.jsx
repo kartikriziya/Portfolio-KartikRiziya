@@ -128,7 +128,7 @@ export default function Contact(props) {
                 </div>
                 <div className="ps-4 individualDetailTYP">
                   <h6 style={{ color: "#ff7b00" }}>Address</h6>
-                  <p>Frankfurt, Germany</p>
+                  <p>Offenbach am Main, Germany</p>
                 </div>
               </div>
             </div>

@@ -4,6 +4,7 @@ import Skill from "./Skill"
 
 import Html from "../assets/html.png"
 import Css from "../assets/css.png"
+import TailwindCss from "../assets/tailwind.png"
 import JavaScript from "../assets/javascript.png"
 import Bootstrap from "../assets/bootstrap.png"
 import jQuery from "../assets/jquery.png"
@@ -14,6 +15,7 @@ import Gsap from "../assets/gsap.png"
 import Php from "../assets/php.png"
 import PhpMyAdmin from "../assets/phpmyadmin.png"
 import MySQL from "../assets/mysql.png"
+import PostgreSQL from "../assets/postgresql.png"
 import Nodejs from "../assets/nodejs.png"
 
 import Office from "../assets/office.png"
@@ -39,6 +41,7 @@ export default function Development(props) {
           <div className="ps-sm-5 developmentContent">
             <Skill mode={props.mode} skillIMG={Html} />
             <Skill mode={props.mode} skillIMG={Css} />
+            <Skill mode={props.mode} skillIMG={TailwindCss} />
             <Skill mode={props.mode} skillIMG={JavaScript} />
             <Skill mode={props.mode} skillIMG={Bootstrap} />
             <Skill mode={props.mode} skillIMG={jQuery} />
@@ -56,6 +59,7 @@ export default function Development(props) {
             <Skill mode={props.mode} skillIMG={Php} />
             <Skill mode={props.mode} skillIMG={PhpMyAdmin} />
             <Skill mode={props.mode} skillIMG={MySQL} />
+            <Skill mode={props.mode} skillIMG={PostgreSQL} />
             <Skill mode={props.mode} skillIMG={Nodejs} />
           </div>
         </div>

@@ -5,6 +5,7 @@ import Experience from "./Experience"
 import Education from "./Education"
 
 import Kartik_ProfileIMG2 from "../assets/Kartik_ProfileIMG3.png"
+import Kartik_Profile_halfIMG from "../assets/kartik_img/Kartik_Profile_half.png"
 import CV from "../assets/Kartik_CV.pdf"
 
 import "./About.css"
@@ -64,11 +65,11 @@ export default function About(props) {
           <div className="col-md-6 col-lg-5 col-xl-4 p-sm-5" id="aboutProfile">
             <div id="aboutIMG_CV">
               <div
-                className={`profileCard-${props.mode} mt-5`}
+                className={`profileRoundCard-${props.mode} mt-5`}
                 style={{ padding: "0px" }}
               >
                 <img
-                  src={Kartik_ProfileIMG2}
+                  src={Kartik_Profile_halfIMG}
                   alt="aboutIMG"
                   className="responsive "
                   id="profileIMG2"

@@ -22,9 +22,11 @@
   justify-content: start;
 }
 #profileIMG2 {
-  height: auto;
   width: 100%;
-  border-radius: 15px;
+  height: 100%;
+  object-fit: contain; /* Bild wird vollständig angezeigt */
+  border-radius: 50%; /* sorgt dafür, dass das Bild rund bleibt */
+  display: block; /* entfernt kleine Lücken unter Images */
 }
 
 .nav-tabs .nav-item.show .nav-link,

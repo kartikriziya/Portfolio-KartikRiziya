@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 
-import Kartik_ProfileIMG from "../assets/Kartik_ProfileIMG1.png"
+import Kartik_Cartoon1_halfIMG from "../assets/kartik_img/Kartik_Cartoon1_half.png"
 
 import "./Home.css"
 import Typed from "typed.js"
@@ -47,7 +47,8 @@ export default function Home(props) {
   return (
     <div>
       <div className="container-fluid" id="home" ref={(el) => (home = el)}>
-        <div className="row">
+        {/* Vertically center row via align-items-center */}
+        <div className="row align-items-center">
           <div className="col-md-6 ps-sm-5" id="homeIntro">
             <div className="ms-5 ps-sm-5" id="homeIntroText">
               <h4 id="homeIntroText1">Hello, my name is </h4>
@@ -70,10 +71,20 @@ export default function Home(props) {
               </button>
             </div>
           </div>
-          <div className="col-md-6 mt-sm-5 p-sm-5" id="homeProfile">
+          <div
+            className="col-md-6 mt-sm-5 p-sm-5"
+            id="homeProfile"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "80vh",
+              height: "100%",
+            }}
+          >
             <div className={`Card profileCard-${props.mode} mt-5`}>
               <img
-                src={Kartik_ProfileIMG}
+                src={Kartik_Cartoon1_halfIMG}
                 alt="profileIMG"
                 className="responsive mt-5"
                 id="profileIMG"

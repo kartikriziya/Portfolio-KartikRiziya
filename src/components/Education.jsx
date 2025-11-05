@@ -14,7 +14,7 @@ export default function Education(props) {
       >
         <div className="mt-3 individual">
           <div className="heading">
-            <h5 style={{ color: "#ff7b00" }}>2021 - Current</h5>
+            <h5 style={{ color: "#ff7b00" }}>2022 - Current</h5>
           </div>
           <div className="ps-1 content">
             <p>B.Sc. Computer Science</p>
@@ -22,12 +22,12 @@ export default function Education(props) {
         </div>
 
         <IndividualEducation
-          educationHeading={"2020 - 2021"}
+          educationHeading={"2021 - 2022"}
           educationContent={"Studienkolleg T-Kurs"}
         />
         <IndividualEducation
-          educationHeading={"2019 - 2020"}
-          educationContent={"German Language ( C1 Level )"}
+          educationHeading={"2019 - 2021"}
+          educationContent={"German Language ( B2, C1 Level )"}
         />
         <IndividualEducation
           educationHeading={"2018 - 2019"}

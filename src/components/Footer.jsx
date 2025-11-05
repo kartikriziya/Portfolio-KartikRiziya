@@ -37,7 +37,9 @@ export default function Footer() {
         </div>
         <div className="row">
           <div className="col-12" id="copyright">
-            <h6>Copyright &copy;2023 All rights reserved.</h6>
+            <h6>
+              Copyright &copy; {new Date().getFullYear()} All rights reserved.
+            </h6>
           </div>
         </div>
       </div>
