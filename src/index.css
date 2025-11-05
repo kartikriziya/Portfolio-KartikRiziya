@@ -26,13 +26,17 @@ body {
   background-color: rgb(223, 224, 225);
   box-shadow: rgba(198, 199, 200, 0.25) 0px 25px 50px -12px;
   height: fit-content;
-  border-radius: 10%;
+  border-radius: 15px;
+  /* padding-left: 3%;
+  padding-right: 3%; */
 }
 .profileCard-dark {
   background-color: rgb(30, 33, 37);
   box-shadow: rgba(26, 30, 33, 0.25) 0px 25px 50px -12px;
   height: fit-content;
-  border-radius: 10%;
+  border-radius: 15px;
+  /* padding-left: 3%;
+  padding-right: 3%; */
 }
 
 /* Skill-Card */
@@ -88,7 +92,6 @@ body {
   --bs-btn-disabled-border-color: #ff7b00;
   --bs-gradient: none;
 }
-
 .specialBTN:hover .BTN_Link {
   color: #fff;
 }

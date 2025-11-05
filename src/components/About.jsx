@@ -4,50 +4,50 @@ import Development from "./Development"
 import Experience from "./Experience"
 import Education from "./Education"
 
-import Kartik_ProfileIMG2 from "../assets/Kartik_ProfileIMG1.1.png"
+import Kartik_ProfileIMG2 from "../assets/Kartik_ProfileIMG3.png"
 import CV from "../assets/Kartik_CV.pdf"
 
 import "./About.css"
-import { gsap } from "gsap"
-import { useGSAP } from "@gsap/react"
-gsap.registerPlugin(useGSAP)
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 export default function About(props) {
   const [aboutIntroLink, setAboutIntroLink] = useState("skills")
   let tlAbout = new gsap.timeline()
   let about = useRef(null)
 
-  // useEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     tlAbout
-  //       .from("#aboutHeading, #aboutIntroText, #myTab", {
-  //         opacity: 0,
-  //         x: 100,
-  //         stagger: { amount: 0.3 },
-  //         ease: props.ease,
-  //       })
-  //       .from("#aboutIMG_CV", {
-  //         opacity: 0,
-  //         x: -100,
-  //         ease: props.ease,
-  //       })
-  //       .from(".skill, .content", {
-  //         opacity: 0,
-  //         y: 100,
-  //         stagger: { amount: 0.3 },
-  //         ease: props.ease,
-  //       })
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      tlAbout
+        .from("#aboutHeading, #aboutIntroText, #myTab", {
+          opacity: 0,
+          x: 100,
+          stagger: { amount: 0.3 },
+          ease: props.ease,
+        })
+        .from("#aboutIMG_CV", {
+          opacity: 0,
+          x: -100,
+          ease: props.ease,
+        })
+        .from(".skill, .content", {
+          opacity: 0,
+          y: 100,
+          stagger: { amount: 0.3 },
+          ease: props.ease,
+        })
 
-  //     ScrollTrigger.create({
-  //       // markers: true,
-  //       animation: tlAbout,
-  //       trigger: about,
-  //       scroller: "body",
-  //       start: "top 70%",
-  //     })
-  //   })
-  //   return () => ctx.revert()
-  // }, [])
+      ScrollTrigger.create({
+        // markers: true,
+        animation: tlAbout,
+        trigger: about,
+        scroller: "body",
+        start: "top 70%",
+      })
+    })
+    return () => ctx.revert()
+  }, [])
 
   const changeAboutIntroLink = (event, target) => {
     setAboutIntroLink(target)
