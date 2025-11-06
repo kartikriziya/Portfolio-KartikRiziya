@@ -76,3 +76,10 @@
 .content {
   margin-top: -7px;
 }
+
+/* Small screens (≤575.98px) */
+@media (max-width: 575.98px) {
+  #aboutProfile {
+    align-items: end;
+  }
+}

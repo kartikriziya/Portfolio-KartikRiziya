@@ -21,11 +21,19 @@
   margin-top: -15% !important;
   height: 60vh;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #homeIntroText3,
 #specifications {
   display: flex;
   flex-direction: row;
+}
+
+/* Small screens (≤575.98px) */
+@media (max-width: 575.98px) {
+  #homeIntro,
+  #homeProfile {
+    min-height: 40vh;
+  }
 }

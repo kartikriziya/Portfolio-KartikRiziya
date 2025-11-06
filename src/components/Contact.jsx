@@ -75,7 +75,7 @@ export default function Contact(props) {
             <h1>Contact me</h1>
           </div>
         </div>
-        <div className="row p-5">
+        <div className="row p-sm-5">
           <div className="col-md-6 ps-sm-5" id="contactDetails">
             <div className="row">
               <div className="col-12 pb-4 contactDetailsHeading">

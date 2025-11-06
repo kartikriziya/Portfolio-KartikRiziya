@@ -49,7 +49,7 @@ export default function Home(props) {
       <div className="container-fluid" id="home" ref={(el) => (home = el)}>
         {/* Vertically center row via align-items-center */}
         <div className="row align-items-center">
-          <div className="col-md-6 ps-sm-5" id="homeIntro">
+          <div className="col-md-6 mt-sm-5 ps-sm-5 " id="homeIntro">
             <div className="ms-5 ps-sm-5" id="homeIntroText">
               <h4 id="homeIntroText1">Hello, my name is </h4>
               <h1 id="homeIntroText2">Kartik Riziya</h1>
@@ -71,22 +71,12 @@ export default function Home(props) {
               </button>
             </div>
           </div>
-          <div
-            className="col-md-6 mt-sm-5 p-sm-5"
-            id="homeProfile"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              minHeight: "80vh",
-              height: "100%",
-            }}
-          >
+          <div className="col-md-6 mt-sm-5 p-sm-5" id="homeProfile">
             <div className={`Card profileCard-${props.mode} mt-5`}>
               <img
                 src={Kartik_Cartoon1_halfIMG}
                 alt="profileIMG"
-                className="responsive mt-5"
+                className="responsive"
                 id="profileIMG"
               />
             </div>

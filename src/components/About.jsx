@@ -84,8 +84,8 @@ export default function About(props) {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-lg-7 col-xl-8 p-5" id="aboutIntro">
-            <div className="mt-4" id="aboutHeading">
+          <div className="col-md-6 col-lg-7 col-xl-8 p-sm-5" id="aboutIntro">
+            <div className="mt-4 " id="aboutHeading">
               <h1>About Me</h1>
             </div>
             <div id="aboutIntroText">
@@ -102,8 +102,17 @@ export default function About(props) {
               </p>
             </div>
             <div id="aboutIntroLinks">
-              <ul className="nav nav-tabs" id="myTab" role="tablist">
-                <li className="nav-item" role="presentation">
+              <ul
+                className="nav nav-tabs flex-nowrap flex-sm-wrap overflow-auto"
+                id="myTab"
+                role="tablist"
+                style={{ gap: "0.5rem", whiteSpace: "nowrap" }}
+              >
+                <li
+                  className="nav-item"
+                  role="presentation"
+                  style={{ flex: "0 0 auto" }}
+                >
                   <a
                     className={`nav-link text-mode-${
                       props.mode === "light" ? "dark" : "light"
@@ -121,7 +130,11 @@ export default function About(props) {
                     Skills
                   </a>
                 </li>
-                <li className="nav-item" role="presentation">
+                <li
+                  className="nav-item"
+                  role="presentation"
+                  style={{ flex: "0 0 auto" }}
+                >
                   <a
                     className={`nav-link text-mode-${
                       props.mode === "light" ? "dark" : "light"
@@ -139,7 +152,11 @@ export default function About(props) {
                     Experience
                   </a>
                 </li>
-                <li className="nav-item" role="presentation">
+                <li
+                  className="nav-item"
+                  role="presentation"
+                  style={{ flex: "0 0 auto" }}
+                >
                   <a
                     className={`nav-link text-mode-${
                       props.mode === "light" ? "dark" : "light"

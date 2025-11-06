@@ -44,16 +44,16 @@ export default function Services(props) {
         id="services"
         ref={(el) => (services = el)}
       >
-        <div className="row pt-sm-5">
+        <div className="row pt-5">
           <div className="col-12 p-5">
-            <div className="ps-sm-5" id="servicesHeading">
+            <div className="ps-sm-5 text-center" id="servicesHeading">
               <h1>Services</h1>
             </div>
           </div>
         </div>
 
         <div className="row p-sm-5">
-          <div className="col-md-6 col-xl-4 mb-5 ps-5 pe-5">
+          <div className="col-md-6 col-xl-4 mb-5 ps-sm-5 pe-sm-5">
             <div className={`serviceCard-${props.mode} service`}>
               <div className="row">
                 <div className="col-12">
@@ -84,7 +84,7 @@ export default function Services(props) {
             </div>
           </div>
 
-          <div className="col-md-6 col-xl-4 mb-5 ps-5 pe-5">
+          <div className="col-md-6 col-xl-4 mb-5 ps-sm-5 pe-sm-5">
             <div className={`serviceCard-${props.mode} service`}>
               <div className="row">
                 <div className="col-12">
@@ -111,7 +111,7 @@ export default function Services(props) {
             </div>
           </div>
 
-          <div className="col-md-6 col-xl-4 mb-5 ps-5 pe-5">
+          <div className="col-md-6 col-xl-4 mb-5 ps-sm-5 pe-sm-5">
             <div className={`serviceCard-${props.mode} service`}>
               <div className="row">
                 <div className="col-12">
